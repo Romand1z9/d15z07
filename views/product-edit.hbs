@@ -1,0 +1,31 @@
+<h1>Редактировать "{{product.title}}"</h1>
+
+<form action="/products/edit" method="POST" class="product-form">
+  <div class="input-field">
+    <input id="title" name="title" type="text" class="validate" required value="{{product.title}}">
+    <label for="title">Название курса</label>
+    <span class="helper-text" data-error="Введите название"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="price" name="price" type="number" class="validate" required min="1"  value="{{product.price}}">
+    <label for="price">Цена курса</label>
+    <span class="helper-text" data-error="Введите цену"></span>
+  </div>
+
+  <div class="input-field">
+    <input id="img" name="img" type="text" class="validate" required  value="{{product.img}}">
+    <label for="img">URL картинки</label>
+    <span class="helper-text" data-error="Введите url картинки"></span>
+  </div>
+
+  <input type="hidden" name="id" value="{{product.id}}">
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+  <button class="btn btn-primary">Сохранить</button>
+</form>
+
+<form action="/products/remove" method="POST">
+  <input type="hidden" name="id" value="{{ product.id }}">
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+  <button class="btn red">Удалить</button>
+</form>

@@ -1,0 +1,31 @@
+{
+  "name": "d15z07",
+  "version": "1.0.0",
+  "description": "d15z07",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Romand1z9",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.3.3",
+    "csurf": "^1.11.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.0",
+    "helmet": "^3.23.3",
+    "mongoose": "^5.9.25",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.10",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+<h1>Корзина</h1>
+
+<div id="cart">
+  {{#if products.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Количество</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {{#each products}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{count}}</td>
+          <td>
+            <button class="btn btm-small btn-floating btn-remove-product" data-id="{{id}}" data-csrf="{{@root.csrf}}" title="Удалить">
+              <i class="material-icons">delete</i>
+            </button>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p><strong>Цена:</strong> <span class="price">{{price}}</span></p>
+
+   <form action="/orders" method="POST">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <button type="submit" class="btn  blue lighten-2">Сделать заказ</button>
+  </form>
+  {{else}}
+    <p>Корзина пуста</p>
+  {{/if}}
+</div>
